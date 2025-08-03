@@ -13,6 +13,53 @@ From the starting position, you can move left or right. Each movement by one uni
 
 Return the maximum total number of fruits you can harvest.
 
+**Approach**:
+- Use a sliding window over the sorted fruits array.
+- For each interval, check if you can collect all fruits within `k` steps.
+- Use prefix sums for fast calculation of total fruits in the interval.
+- The process tries all possible valid intervals and returns the maximum total fruits collected.
+
+---
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+class Solution {
+public:
+    int maxTotalFruits(vector<vector<int>>& fruits, int startPos, int k) {
+        int n = fruits.size();
+        // prefixSum[i] stores the total number of fruits from fruits[0] to fruits[i-1]
+        vector<int> prefixSum(n+1, 0);
+        for (int i = 0; i < n; ++i) {
+            prefixSum[i+1] = prefixSum[i] + fruits[i][1];
+        }
+
+        // Function to get the sum of fruits between indices l and r (inclusive)
+        auto getSum = [&](int l, int r) {
+            return prefixSum[r+1] - prefixSum[l];
+        };
+
+        int maxFruits = 0;
+        // Try all possible windows [left, right] such that positions are within k steps
+        int left = 0;
+        int right = 0;
+
+        // Check all ranges where the left side is startPos-k to startPos and right side is to the right
+        while (left < n && fruits[left][0] <= startPos + k) {
+            // Move right as far as possible within k steps from startPos to fruits[right][0] and then to fruits[left][0]
+            while (right < n && max( abs(startPos - fruits[left][0]) , abs(fruits[right][0] - startPos) ) + (fruits[right][0] - fruits[left][0]) <= k ) {
+                right++;
+            }
+            // The window is [left, right-1]
+            maxFruits = max(maxFruits, getSum(left, right-1));
+            left++;
+        }
+
+        return maxFruits;
+    }
+};
+```
 ---
 
 ## Example 1
