@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Language](https://img.shields.io/badge/language-C%2B%2B%2FPython-orange)
 
-> **Quick Navigation:** [Go to POTD branch](https://github.com/Itsme-kaushal/cp/tree/potd)
+> **Quick Navigation:** [Go to POTD branch](https://github.com/Itsme-kaushal/cp/tree/main/potd)
 
 ## Repository Purpose
 
