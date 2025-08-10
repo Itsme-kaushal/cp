@@ -4,6 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Language](https://img.shields.io/badge/language-C%2B%2B%2FPython-orange)
 
+> **Quick Navigation:** [Go to POTD branch](https://github.com/Itsme-kaushal/cp/tree/potd)
+
 ## Repository Purpose
 
 This repository contains solutions and utilities for competitive programming practice. It includes problem solutions, debugging utilities, testing frameworks, and workflow automation for efficient problem-solving in contests like Codeforces, AtCoder, LeetCode, and other competitive programming platforms.
@@ -39,12 +41,14 @@ cp/
 ## Getting Started
 
 ### Prerequisites
+
 - C++ compiler (g++ 11 or later recommended)
 - Python 3.8+
 - VS Code (recommended IDE)
 - Git
 
 ### Quick Setup
+
 ```bash
 git clone https://github.com/Itsme-kaushal/cp.git
 cd cp
@@ -57,6 +61,7 @@ g++ -o debug debugging/debug.cpp
 ## Debugging Utilities
 
 ### Debug Macros
+
 Use the debug macros from `debugging/debug.h`:
 
 ```cpp
@@ -77,6 +82,7 @@ debug("Processing step", step, "with value", value);
 ```
 
 ### Fast I/O
+
 Include fast I/O optimizations:
 
 ```cpp
@@ -90,6 +96,7 @@ int main() {
 ```
 
 ### Local Testing
+
 ```bash
 # Compile with debug flags
 g++ -DLOCAL -std=c++17 -O2 -Wall -Wextra -o solution solution.cpp
@@ -102,6 +109,7 @@ diff output.txt expected.txt
 ```
 
 ### Stress Testing
+
 Use the stress testing utility:
 
 ```bash
@@ -111,8 +119,9 @@ python3 debugging/stress_test.py --generator gen.cpp --solution sol.cpp --brute 
 ## POTD (Problem of the Day) Workflow
 
 ### Daily Routine
+
 1. **Pick a Problem**: Select from your target platform
-2. **Create Solution File**: 
+2. **Create Solution File**:
    ```bash
    # Create new POTD entry
    mkdir -p potd/$(date +%Y-%m)
@@ -124,6 +133,7 @@ python3 debugging/stress_test.py --generator gen.cpp --solution sol.cpp --brute 
 6. **Commit**: Use consistent commit messages
 
 ### POTD Commands
+
 ```bash
 # Quick POTD setup
 make potd PROBLEM="two_sum"
@@ -138,12 +148,14 @@ make archive-potd MONTH="2025-01"
 ## Contribution Guidelines
 
 ### Code Style
+
 - Use consistent indentation (2 spaces)
-- Follow naming conventions: `snake_case` for variables, `PascalCase` for classes
+- Follow naming conventions: snake_case for variables, PascalCase for classes
 - Add complexity analysis in comments
 - Include test cases for each solution
 
 ### Commit Message Format
+
 ```
 type(scope): description
 
@@ -162,6 +174,7 @@ docs: update README with stress testing guide
 ```
 
 ### Pull Request Process
+
 1. Create feature branch: `git checkout -b feature/problem-name`
 2. Make changes with proper commits
 3. Test thoroughly
@@ -170,12 +183,14 @@ docs: update README with stress testing guide
 ## Folder Conventions
 
 ### Naming Conventions
+
 - **Problem files**: `problem_name.cpp` or `problem_name.py`
 - **Contest folders**: `platform_contest_name/`
 - **Date format**: `YYYY-MM-DD` for daily problems
 - **Archive format**: `YYYY-MM/` for monthly archives
 
 ### File Organization
+
 - One problem per file
 - Include problem statement link in comments
 - Add time/space complexity analysis
@@ -184,6 +199,7 @@ docs: update README with stress testing guide
 ## Build & Run Commands
 
 ### C++ Commands
+
 ```bash
 # Development build (with debug)
 g++ -DLOCAL -std=c++17 -O2 -Wall -Wextra -g -o solution solution.cpp
@@ -199,6 +215,7 @@ valgrind --tool=memcheck ./solution < input.txt
 ```
 
 ### Python Commands
+
 ```bash
 # Run Python solution
 python3 solution.py < input.txt
@@ -214,6 +231,7 @@ pypy3 solution.py < input.txt
 ```
 
 ### Makefile Targets
+
 ```bash
 # Build current solution
 make build
@@ -234,14 +252,17 @@ make submit
 ## VS Code Setup Tips
 
 ### Recommended Extensions
+
 - C/C++ (Microsoft)
-- Python (Microsoft) 
+- Python (Microsoft)
 - Code Runner
 - GitLens
 - Competitive Programming Helper
 
 ### Key Settings
+
 Add to `.vscode/settings.json`:
+
 ```json
 {
     "code-runner.executorMap": {
@@ -256,14 +277,16 @@ Add to `.vscode/settings.json`:
 ```
 
 ### Useful Shortcuts
-- `Ctrl+Alt+N`: Run code
-- `F5`: Debug
-- `Ctrl+Shift+P`: Command palette
-- `Ctrl+` `: Toggle terminal
+
+- **Ctrl+Alt+N**: Run code
+- **F5**: Debug
+- **Ctrl+Shift+P**: Command palette
+- **Ctrl+`**: Toggle terminal
 
 ## Testing with Sample I/O
 
 ### Input/Output Files
+
 ```bash
 # Create test files
 echo "5 3\n1 2 3 4 5" > input.txt
@@ -275,6 +298,7 @@ diff output.txt expected.txt
 ```
 
 ### Automated Testing Script
+
 ```bash
 #!/bin/bash
 # test.sh
@@ -294,7 +318,9 @@ echo "All tests passed!"
 ## Git Hooks (Optional)
 
 ### Pre-commit Hook
+
 Create `.git/hooks/pre-commit`:
+
 ```bash
 #!/bin/bash
 # Compile check for C++ files
@@ -317,7 +343,9 @@ done
 ```
 
 ### Pre-push Hook
+
 Create `.git/hooks/pre-push`:
+
 ```bash
 #!/bin/bash
 # Run tests before push
@@ -334,7 +362,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Badges
 
-- ![Solved Problems](https://img.shields.io/badge/solved-0-blue) (Update with actual count)
+- ![Solved Problems](https://img.shields.io/badge/solved-50+-green) (Update with actual count)
 - ![Last Commit](https://img.shields.io/github/last-commit/Itsme-kaushal/cp)
 - ![Repo Size](https://img.shields.io/github/repo-size/Itsme-kaushal/cp)
 - ![Contributors](https://img.shields.io/github/contributors/Itsme-kaushal/cp)
